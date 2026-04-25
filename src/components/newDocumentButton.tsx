@@ -22,4 +22,5 @@ function NewDocumentButton() {
     </Button>
   );
 }
+
 export default NewDocumentButton;
