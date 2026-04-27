@@ -1,3 +1,5 @@
+"use client";
+
 import NewDocumentButton from "./newDocumentButton";
 import {
   Sheet,
@@ -13,6 +15,7 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import { db } from "../../firebase";
 import { DocumentData } from "firebase-admin/firestore";
 import { useEffect, useState } from "react";
+import SidebarOption from "./sidebarOption";
 
 interface RoomDocument extends DocumentData {
   createdAt: string;
@@ -32,12 +35,12 @@ function Sidebar() {
     editor: [],
   });
 
+  const userEmail = user?.emailAddresses[0]?.emailAddress;
+
   const [data, loading, error] = useCollection(
-    user &&
-      query(
-        collectionGroup(db, "rooms"),
-        where("userId", "==", user.emailAddresses[0].toString()),
-      ),
+    userEmail
+      ? query(collectionGroup(db, "rooms"), where("userId", "==", userEmail))
+      : null,
   );
 
   useEffect(() => {
@@ -88,12 +91,20 @@ function Sidebar() {
               My Documents
             </h2>
             {groupedData.owner.map((doc) => (
-              // <SidebarOption key={doc.id} id={doc.id} href={`/doc/${doc.id}`} />
-              <p>{doc.id}</p>
+              <SidebarOption key={doc.id} id={doc.id} href={`/doc/${doc.id}`} />
             ))}
           </>
         )}
       </div>
+
+      {groupedData.editor.length > 0 && (
+        <>
+          <h2 className="text-gray-500 font-semibold text-sm">Share with Me</h2>
+          {groupedData.editor.map((doc) => (
+            <SidebarOption key={doc.id} id={doc.id} href={`/doc/${doc.id}`} />
+          ))}
+        </>
+      )}
     </>
   );
 
