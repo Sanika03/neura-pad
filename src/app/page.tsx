@@ -1,11 +1,11 @@
+import { ArrowLeftCircle } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-       <h1>Neura Pad</h1>
-      </main>
-    </div>
+    <main className="flex space-x-2 items-center animate-pulse">
+      <ArrowLeftCircle className="w-12 h-12" />
+      <h1 className="font-bold">Get started with creating a New Document</h1>
+    </main>
   );
 }
