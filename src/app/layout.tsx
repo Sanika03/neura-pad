@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
+import Breadcrumbs from "@/components/breadcrumbs";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -25,6 +26,8 @@ export default function RootLayout({
           <Header />
           <div className="flex min-h-screen">
             <Sidebar/>
+
+            <Breadcrumbs />
 
             <div className="flex-1 p-4 bg-gray-100 overflow-y-auto scrollbar-hide">
               {children}
