@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useDocumentData } from "react-firebase-hooks/firestore";
 import { doc } from "firebase/firestore";
-import { db } from "../../firebase";
+import { db } from "../../../firebase";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useMemo } from "react";

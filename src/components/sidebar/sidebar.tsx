@@ -1,6 +1,6 @@
 "use client";
 
-import NewDocumentButton from "./newDocumentButton";
+import NewDocumentButton from "../newDocumentButton";
 import {
   Sheet,
   SheetContent,
@@ -12,7 +12,7 @@ import { useUser } from "@clerk/nextjs";
 import { collectionGroup, query, where } from "firebase/firestore";
 import { MenuIcon } from "lucide-react";
 import { useCollection } from "react-firebase-hooks/firestore";
-import { db } from "../../firebase";
+import { db } from "../../../firebase";
 import { DocumentData } from "firebase-admin/firestore";
 import { useEffect, useState } from "react";
 import SidebarOption from "./sidebarOption";
