@@ -3,9 +3,9 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
-import Header from "@/components/header";
-import Sidebar from "@/components/sidebar";
-import Breadcrumbs from "@/components/breadcrumbs";
+import Header from "@/components/header/header";
+import Sidebar from "@/components/sidebar/sidebar";
+import Breadcrumbs from "@/components/header/breadcrumbs";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
