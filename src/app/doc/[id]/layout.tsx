@@ -1,3 +1,4 @@
+import RoomProvider from "@/providers/roomProvider";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
@@ -14,6 +15,6 @@ async function DocLayout({
     redirect("/sign-in");
   }
 
-  return <div>{children}</div>; 
+  return <RoomProvider roomId={id}>{children}</RoomProvider>;
 }
 export default DocLayout;
