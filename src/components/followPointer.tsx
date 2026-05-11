@@ -42,7 +42,7 @@ function FollowPointer({
         fill={color}
         strokeWidth="1"
         viewBox="0 0 16 16"
-        className="h-6 w-6 transform -rotate-[70deg] -translate-x-[12px] -translate-y-[10px]"
+        className="h-6 w-6 transform -rotate-7-translate-x-3 -translate-y-2.5"
         height="1em"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
