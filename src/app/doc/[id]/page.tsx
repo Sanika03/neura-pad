@@ -1,6 +1,6 @@
 "use client";
 
-import Document from "@/components/document";
+import Document from "@/components/document/document";
 
 function DocumentPage({
   params: { id },
