@@ -19,6 +19,8 @@ function LiveCursorProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <div onPointerMove={handlePointerMove} onPointerLeave={handlePointerLeave}>
+      {children}
+      
       {others
         .filter((other) => other.presence.cursor !== null)
         .map(({ connectionId, presence, info }) => (
