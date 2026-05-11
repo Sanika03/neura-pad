@@ -2,7 +2,7 @@ import { useRoom } from "@liveblocks/react/suspense";
 import { useEffect, useState } from "react";
 import * as Y from "yjs";
 import { LiveblocksYjsProvider } from "@liveblocks/yjs";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { SunIcon, MoonIcon } from "lucide-react";
 import { BlockNoteView } from "@blocknote/shadcn";
 import { BlockNoteEditor } from "@blocknote/core";

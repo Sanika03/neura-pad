@@ -1,6 +1,6 @@
 "use client";
 
-import NewDocumentButton from "../newDocumentButton";
+import NewDocumentButton from "../common/newDocumentButton";
 import {
   Sheet,
   SheetContent,

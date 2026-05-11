@@ -1,6 +1,6 @@
 "use client";
 
-import FollowPointer from "@/components/followPointer";
+import FollowPointer from "@/components/common/followPointer";
 import { useMyPresence, useOthers } from "@liveblocks/react/suspense";
 import { PointerEvent } from "react";
 

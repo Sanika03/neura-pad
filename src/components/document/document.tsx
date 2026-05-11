@@ -1,17 +1,18 @@
 "use client";
 
 import { useState, useTransition, FormEvent, useEffect } from "react";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
 import { doc, updateDoc } from "firebase/firestore";
-import { db } from "../../firebase";
+import { db } from "../../../firebase";
 import { useDocumentData } from "react-firebase-hooks/firestore";
-import Editor from "./editor";
+import Editor from "../editor/editor";
 
 function Document({ id }: { id: string }) {
   const [data, loading, error] = useDocumentData(doc(db, "documents", id));
   const [input, setInput] = useState("");
   const [isUpdating, startTransition] = useTransition();
+  const isOwner = useOwner();
 
   useEffect(() => {
     if (data) {
@@ -42,6 +43,13 @@ function Document({ id }: { id: string }) {
           </Button>
 
           {/* IF */}
+          {isOwner && (
+            <>
+              {/* InviteUser */}
+              {/*  Delete Document */}
+              <DeleteDocument />
+            </>
+          )}
           {/* isOwner && InviteUser, Delete Document */}
         </form>
       </div>
