@@ -10,6 +10,7 @@ import Editor from "../editor/editor";
 import DeleteDocument from "./deleteDocument";
 import useOwner from "@/lib/useOwner";
 import InviteUser from "../common/inviteUser";
+import ManageUsers from "../common/manageUsers";
 
 function Document({ id }: { id: string }) {
   const [data, loading, error] = useDocumentData(doc(db, "documents", id));
@@ -47,17 +48,16 @@ function Document({ id }: { id: string }) {
 
           {isOwner && (
             <>
-              {/* InviteUser */}
               <InviteUser />
-              {/*  Delete Document */}
               <DeleteDocument />
             </>
           )}
         </form>
       </div>
 
-      <div>
+      <div className="flex max-w-6xl mx-auto justify-between items-center mb-5">
         {/* Manage Users */}
+        <ManageUsers />
 
         {/* Avatars */}
       </div>
