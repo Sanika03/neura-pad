@@ -33,7 +33,7 @@ export async function createNewDocument() {
 }
 
 export async function deleteDocument(roomId: string) {
-  const { userId, sessionClaims } = await auth();
+  const { userId } = await auth();
 
   if (!userId) {
     redirect("/sign-in");
@@ -61,6 +61,33 @@ export async function deleteDocument(roomId: string) {
     await liveblocks.deleteRoom(roomId);
 
     return { success: true };
+  } catch (error) {
+    console.error(error);
+    return { success: false };
+  }
+}
+
+export async function inviteUserToDocument(roomId: string, email: string) {
+  const { userId } = await auth();
+
+  if (!userId) {
+    redirect("/sign-in");
+  }
+
+  try {
+    await adminDb
+      .collection("users")
+      .doc(email)
+      .collection("rooms")
+      .doc(roomId)
+      .set({
+        userId: email,
+        role: "editor",
+        createdAt: new Date(),
+        roomId,
+      });
+
+      return { success: true };
   } catch (error) {
     console.error(error);
     return { success: false };
