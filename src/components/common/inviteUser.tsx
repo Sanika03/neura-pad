@@ -2,18 +2,16 @@
 
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { FormEvent, useState, useTransition } from "react";
 import { Button } from "../ui/button";
-import { usePathname, useRouter } from "next/navigation";
-import { deleteDocument, inviteUserToDocument } from "../../../actions/actions";
+import { usePathname } from "next/navigation";
+import { inviteUserToDocument } from "../../../actions/actions";
 import { toast } from "sonner";
 import { Input } from "../ui/input";
 
@@ -23,7 +21,6 @@ function InviteUser() {
   const [isPending, startTransition] = useTransition();
   // TODO: Use useRoom to get room id instead of using pathname
   const pathname = usePathname();
-  const router = useRouter();
 
   const handleInvite = async (e: FormEvent) => {
     e.preventDefault();
@@ -39,7 +36,7 @@ function InviteUser() {
         setEmail("");
         toast.success("User Added to Room successfully");
       } else {
-        toast.error("Failed to add user toroom");
+        toast.error("Failed to add user to room");
       }
     });
   };
