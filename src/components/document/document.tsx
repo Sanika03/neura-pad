@@ -56,7 +56,6 @@ function Document({ id }: { id: string }) {
       </div>
 
       <div className="flex max-w-6xl mx-auto justify-between items-center mb-5">
-        {/* Manage Users */}
         <ManageUsers />
 
         {/* Avatars */}
