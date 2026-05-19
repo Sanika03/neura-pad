@@ -47,7 +47,7 @@ function ManageUsers() {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <Button asChild variant="outline">
-        <DialogTrigger>Users ({usersInRoom?.docs?.length})</DialogTrigger>
+        <DialogTrigger className="hover:cursor-pointer">Users ({usersInRoom?.docs?.length})</DialogTrigger>
       </Button>
       <DialogContent>
         <DialogHeader>
@@ -57,7 +57,7 @@ function ManageUsers() {
           </DialogDescription>
         </DialogHeader>
 
-        <hr className="my-2" />
+        <hr />
 
         <div className="flex flex-col space-y-2">
           {usersInRoom?.docs.map((doc) => (
