@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useTransition, FormEvent, useEffect } from "react";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../../firebase";
 import { useDocumentData } from "react-firebase-hooks/firestore";
